@@ -1,0 +1,79 @@
+<style>
+  .here{
+      background-color: #99C1C1 ;
+      color: white;
+  }
+</style>
+
+<div class="col-lg-18">
+  <div class="card">
+     <div class="d-flex justify-content-between">
+      <div class="ml-4 mt-3 col-sm-2 ">
+        <a class="btn btn-pill  btn-primary" href="#/newDepartement"> + New Departement</a>
+     </div>
+       <div class="controls  mt-3 col-sm-3">
+           <div class="input-group">
+             <input id="appendedInputButtons" size="10" class="form-control" type="text"placeholder="Search key word" >
+             <span class="input-group-append">
+               <button class="btn btn-secondary" type="button"><i class="fas fa-search"></i></button>
+              
+             </span>
+           </div>
+      </div>
+     </div>
+    <div class="card-body">
+      <table class="table">
+        <thead>
+          <tr class="here" >
+            <th>Currency code <span>&#8645;</span></th>
+            <th>Application Date <span>&#8645;</span></th>
+            <th>Euro conversion rate(€) <span>&#8645;</span></th>
+            <th>Status <span>&#8645;</span></th>
+            <th>Actions <span>&#8645;</span></th>
+            
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Samppa Nori</td>
+            <td>Samppa Nori</td>
+            <td>Samppa Nori</td>
+            <td>
+              <span class="badge badge-success">Active</span>
+            </td>
+            <td>
+              <span class="badge badge-success">Banned</span>
+            </td>
+          </tr>
+          <tr>
+            <td>Friderik Dávid</td>
+            <td>Samppa Nori</td>
+            <td>Samppa Nori</td>
+            <td>
+              <span class="badge badge-danger">Banned</span>
+            </td>
+            
+            <td>
+              <span class="badge badge-danger">-</span>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <div class="  d-flex justify-content-center">
+         
+          <label class="mr-2 mt-2">Showing 1 of 2 entries</label>
+          <pagination [totalItems]="bigTotalItems" [(ngModel)]="bigCurrentPage" [maxSize]="maxSize" class="pagination-m"
+                      previousText="&lsaquo;" nextText="&rsaquo;" firstText="&laquo;" lastText="&raquo;"
+                      [boundaryLinks]="true" [rotate]="false" (numPages)="numPages = $event"></pagination>
+                      <select name="datatable-basic_length"  class="form-control col-xs-2 w-auto">
+                          <option value="5">5</option><option value="10">10</option>
+                          <option value="20">20</option><option value="50">50</option></select>
+      </div>
+  </div>
+</div>
+<!--/.col-->
+
+     
+    
+ 
+</div>

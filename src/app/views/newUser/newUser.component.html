@@ -1,0 +1,179 @@
+<style>
+    .required:after {
+      content:" *";
+      color: red;
+    }
+     
+  .element { 
+    position: absolute;
+    top: 10px; 
+    right: 10px; 
+    
+  } 
+  .select option {
+background-color: #FFF;
+  }
+
+  </style>
+  
+  <script>$('.my-select').selectpicker();</script>
+  <div class="animated fadeIn">
+    <div class="row">
+      
+      <div class="col-sm-12">
+        <div class="card ">
+          <div class="card-header d-flex justify-content-between" >
+            <strong>Add New User</strong>
+            
+            <div class="mx-auto" >
+            <strong >Status</strong>
+            <span class="badge badge-pill badge-success">Active</span>
+          </div>
+          </div>
+          <form  #myform="ngForm" (ngSubmit)="createUser(myform)" >
+          <div class="card-body col-sm-12">
+            <div class="row">
+            <div class="form-group col-sm-4">
+              <label  class="required" >Email</label>
+            <div class="input-group">
+              <div class="input-group-prepend">
+                <span class="input-group-text"><i class="fas fa-envelope"></i></span>
+              </div>
+              <input type="text" id="email" name="email" class="form-control" ngModel required placeholder="Email">
+            </div>
+            
+            </div>
+
+            <div class="form-group col-sm-4">
+                <label  >Login</label>
+              <div class="input-group">
+                <div class="input-group-prepend">
+                  <span class="input-group-text"><i class="fa fa-user"></i></span>
+                </div>
+                <input type="text" id="login" name="login" class="form-control" ngModel placeholder="Login">
+              </div>
+              
+              </div>
+
+              <div class="form-group col-sm-4">
+                <label > First name</label>
+                  
+                  <div class="input-group">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text"><i class="fa fa-user"></i></span>
+                    </div>
+                    <input type="text" id="firstname" name="firstname" class="form-control" ngModel placeholder="FirstName">
+                </div>
+              </div>
+            </div>
+
+
+
+            <div class="row">
+                <div class="form-group col-sm-4">
+                    <label>Last name </label>
+                  <div class="input-group">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text"><i class="fa fa-user"></i></span>
+                    </div>
+                    <input type="text" id="lastname" name="lastname" class="form-control"   ngModel placeholder="LastName">
+                  </div>
+                  
+                  </div>
+                <div class="form-group col-sm-4">
+                    <label   >Roles</label>
+                  <div class="input-group">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text"><i class="fas fa-address-book"></i></span>
+                    </div>
+                    <select id="roles" name="roles"  class="form-control" ngModel placeholder="Role">
+                        <option value="">Select Role(s)</option>
+                        <option value="1">Option #1</option>
+                        <option value="2">Option #2</option>
+                        <option value="3">Option #3</option>
+                      </select>
+                  </div>
+                  
+                  </div>
+                  <div class="form-group col-sm-4">
+                    <label >Business Unit(s) </label>
+                  <div class="input-group">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text"><i class="icon-film icons"></i></span>
+                    </div>
+                    <select id="Business_Unit" name="Business_Unit"  class="form-control" ngModel placeholder="Select Business unit(s)">
+                        <option value="">Select Business Unit(s)</option>
+                        <option value="1">Option #1</option>
+                        <option value="2">Option #2</option>
+                        <option value="3">Option #3</option>
+                      </select>
+                  </div>
+                  
+                  </div>
+
+                
+        </div>
+            <div class="row">
+                <div class="form-group col-sm-4">
+            
+                    <label >Business Line</label>
+                  
+                  <div class="input-group">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text"><i class="icon-picture icons"></i></span>
+                    </div>
+                    <select id="Business_Line" name="Business_Line"  class="form-control"ngModel  placeholder="Select Business line(s)">
+                        <option value="">Select business Line(s)</option>
+                        <option value="1">Option #1</option>
+                        <option value="2">Option #2</option>
+                        <option value="3">Option #3</option>
+                      </select>
+                  
+                  </div>
+                  
+                  </div>
+                  <div class="form-group col-sm-4">
+                    <label > Pole / Deapartement</label>
+                  <div class="input-group">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text"><i class="icon-flag icons"></i></span>
+                    </div>
+                    <select id="Departement" name="Departement"  class="form-control" ngModel >
+                        <option value="" disabled selected>Select departement(s)</option>
+                        <option value="1">Option #1</option>
+                        <option value="2">Option #2</option>
+                        <option value="3">Option #3</option>
+                      </select>
+                  </div>
+                  
+                  </div>
+                  <div class="form-group col-sm-4">
+                    <label for="Area"> Area</label>
+                  <div class="input-group">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text"><i class="icon-map icons"></i></span>
+                    </div>
+                    <select ngModel  id="Area" name="Area"   class="form-control">
+                        <option  value="" disabled selected >Select Area(s)</option>
+                        <option value="1">Option #1</option>
+                        <option value="2">Option #2</option>
+                        <option value="3">Option #3</option>
+                      </select>
+                  </div>
+                  
+                  </div>
+            </div><!--/.row-->
+           
+          </div>
+       
+        <div class="card-footer d-flex justify-content-between">
+            <a class="btn btn-pill col-sm-1 btn-danger" href="#/administration/users"  ><i class="fa fa-ban"></i> Cancel</a>
+            <button type="submit"   class="btn btn-pill col-sm-1 btn-primary"><i class="fa fa-dot-circle-o"></i> Add</button>
+            
+          </div>
+        </form>
+        </div>
+      
+      </div><!--/.col-->
+      
+    </div><!--/.row-->

@@ -1,0 +1,96 @@
+<style>
+    .required:after {
+      content:" *";
+      color: red;
+    }
+     
+  .element { 
+    position: absolute;
+    top: 10px; 
+    right: 10px; 
+    
+  } 
+  .select option {
+background-color: #FFF;
+  }
+
+  </style>
+  
+  <script>$('.my-select').selectpicker();</script>
+  <div class="animated fadeIn">
+    <div class="row">  
+      <div class="col-sm-12">
+        <div class="card ">
+          <div class="card-header d-flex justify-content-between" >
+            <strong>Add New Geography</strong>
+            <div class="mx-auto" >
+            <strong >Status</strong>
+            <span class="badge badge-pill badge-success">Active</span>
+          </div>
+          </div>
+          <form   #myform="ngForm" (ngSubmit)="createGeography(myform)">
+
+          <div class="card-body col-sm-12">
+            <div class="row">
+            <div class="form-group col-sm-4">
+              <label  class="required" >Country</label>
+            <div class="input-group">
+              <div class="input-group-prepend">
+                <span class="input-group-text"><i class="fa fa-user"></i></span>
+              </div>
+              <input type="text" id="country" name="country" class="form-control"  required ngModel placeholder="Type or select a country">
+            </div>
+            </div>
+
+            <div class="form-group col-sm-4">
+                <label class="required">Area</label>
+                  <div class="input-group">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text"><i class="icon-map icons"></i></span>
+                    </div>
+                    <select id="area" name="area" ngModel class="form-control">
+                        <option value="" disabled selected>Select / create an Area</option>
+                        <option value="1">Option #1</option>
+                        <option value="2">Option #2</option>
+                        <option value="3">Option #3</option>
+                      </select>
+                </div>
+              </div>
+
+              <div class="form-group col-sm-4">
+                <label >Continent</label>   
+                  <div class="input-group">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text"><i class="icon-globe icons"></i></span>
+                    </div>
+                    <select id="continent" name="continent" ngModel class="form-control">
+                        <option value="" disabled selected>Select  continent(s)</option>
+                        <option value="1">Option #1</option>
+                        <option value="2">Option #2</option>
+                        <option value="3">Option #3</option>
+                      </select>
+                </div>
+                
+               
+              </div>
+
+            </div>
+
+
+
+        
+            
+           
+          </div>
+      
+        <div class="card-footer d-flex justify-content-between">
+            <a class="btn btn-pill col-sm-1 btn-danger" href="#/administration/geography"  ><i class="fa fa-ban"></i> Cancel</a>
+            <button type="submit"  class="btn btn-pill col-sm-1 btn-primary"><i class="fa fa-dot-circle-o"></i> Add</button>
+            
+          </div>
+        </form>
+        </div>
+      
+      </div><!--/.col-->
+      
+    </div><!--/.row-->

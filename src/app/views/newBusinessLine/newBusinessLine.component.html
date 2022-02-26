@@ -1,0 +1,84 @@
+<style>
+    .required:after {
+      content:" *";
+      color: red;
+    }
+     
+  .element { 
+    position: absolute;
+    top: 10px; 
+    right: 10px; 
+    
+  } 
+ 
+
+ 
+  </style>
+  
+  
+  <div class="animated fadeIn">
+    <div class="row">
+      
+      <div class="col-sm-12">
+        <div class="card ">
+          <div class="card-header d-flex justify-content-between" >
+            <strong>Add New Business Line</strong>
+            
+            <div class="mx-auto" >
+            <strong >Status</strong>
+            <span class="badge badge-pill badge-success">Active</span>
+          </div>
+          </div>
+          <form    #myform="ngForm" (ngSubmit)="createBusinessLine(myform)" >
+          <div class="card-body col-sm-12">
+            <div class="row">
+            <div class="form-group col-sm-6">
+            
+              <label for="name_Line" class="required" >Business Line</label>
+            
+            <div class="input-group">
+              <div class="input-group-prepend">
+                <span class="input-group-text"><i class="icon-picture icons"></i></span>
+              </div>
+              <input type="text" id="name_Line" name="name_Line" class="form-control" required ngModel placeholder="Name of Business Line">
+            </div>
+            
+            </div>
+            <div class="form-group col-sm-6">
+                <label for="Business_Unit" class="required">Business Unit</label>
+                  
+                  <div class="input-group  ">
+                    <div class="input-group-prepend  ">
+                      <span class="input-group-text "><i class="icon-picture icons "></i></span>
+                    </div>
+                     
+                    <div class="form-control ">
+                      <label> Toppings</label>
+                      <mat-select class="form-group col-sm-10" required ngModel name="Business_Unit" id="Business_Unit" multiple>
+                        <mat-option value="1">topping</mat-option>
+                        <mat-option value="2">topping</mat-option>
+                       
+                      </mat-select>
+                    </div>
+                
+                </div>
+                
+               
+              </div>
+            </div>
+         
+           
+           
+          </div>
+   
+        <div class="card-footer d-flex justify-content-between">
+          <a class="btn btn-pill col-sm-1 btn-danger" href="#/administration/Business_Lines"  ><i class="fa fa-ban"></i> Cancel</a>
+          <button type="submit"  class="btn btn-pill col-sm-1 btn-primary"><i class="fa fa-dot-circle-o"></i> Add</button>
+          
+        </div>
+      </form>
+        </div>
+      
+      </div><!--/.col-->
+      
+    </div><!--/.row-->

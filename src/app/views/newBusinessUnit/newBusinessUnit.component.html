@@ -1,0 +1,60 @@
+<style>
+    .required:after {
+      content:" *";
+      color: red;
+    }
+     
+  .element { 
+    position: absolute;
+    top: 10px; 
+    right: 10px; 
+    
+  } 
+  </style>
+  
+  <div class="animated fadeIn">
+    <div class="row">
+      
+      <div class="col-sm-12">
+        <div class="card ">
+          <div class="card-header d-flex justify-content-between" >
+            <strong>Add New Business Unit</strong>
+            
+            <div class="mx-auto" >
+            <strong >Status</strong>
+            <span class="badge badge-pill badge-success">Active</span>
+          </div>
+          </div>
+          <form   #myform="ngForm" (ngSubmit)="createBusinessUnit(myform)" >
+          <div class="card-body col-sm-12">
+            <div class="row">
+            <div class="form-group col-sm-12">
+            
+              <label for="name_Unit" class="required" >Business Unit</label>
+            
+            <div class="input-group">
+              <div class="input-group-prepend">
+                <span class="input-group-text"><i class="icon-film icons"></i></span>
+              </div>
+              <input type="text" id="name_Unit" name="name_Unit" class="form-control" required ngModel placeholder="Name of Business Unit">
+            </div>
+            
+            </div>
+        
+            </div>
+         
+           
+           
+          </div>
+       
+        <div class="card-footer d-flex justify-content-between">
+          <a class="btn btn-pill col-sm-1 btn-danger" href="#/administration/Business_Units"  ><i class="fa fa-ban"></i> Cancel</a>
+          <button type="submit"  class="btn btn-pill col-sm-1 btn-primary"><i class="fa fa-dot-circle-o"></i> Add</button>
+          
+        </div>
+      </form>
+        </div>
+      
+      </div><!--/.col-->
+      
+    </div><!--/.row-->
